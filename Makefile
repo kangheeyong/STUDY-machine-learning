@@ -3,7 +3,6 @@ clean:
 	-find -name "*.swp" -exec rm {} \;
 	-find -name "*.pyc" -exec rm {} \;
 
-
 process_run: make_folder
 	supervisord -c /home/STUDY-machine-learning/supervisor/basic_process.conf
 

@@ -107,7 +107,7 @@ for epoch in range(EPOCHS):
     template = 'epoch: {}, loss: {}, accuracy: {}, test_loss: {}, test_accuracy: {}'\
                .format(epoch+1, train_loss.result(), train_accuracy.result()*100,
                        test_loss.result(), test_accuracy.result()*100)
-
+    print(template)
 
 
 
