@@ -22,11 +22,11 @@ docker_container_remove:
 
 docker_image_remove: docker_container_remove
 	-sudo docker rmi $$(sudo docker images -q -f dangling=true)
-	-sudo docker rmi $$(docker images -q -f reference=local/cuda:10.0-base)
+	-sudo docker rmi $$(docker images -q -f reference=local/cuda:10.1-base)
 	
 docker_run:
-	sudo docker build -t local/cuda:10.0-base -f docker/Dockerfile .
-	sudo docker run --gpus all -d -ti -p 8090:8090 --name jeiger-gpu local/cuda:10.0-base
+	sudo docker build -t local/cuda:10.1-base -f docker/Dockerfile .
+	sudo docker run --gpus all -d -ti -p 8090:8090 --name jeiger-gpu local/cuda:10.1-base
 
 docker_exec:
 	sudo docker exec -ti jeiger-gpu /bin/zsh --login
@@ -35,4 +35,4 @@ nvidia_docker_inastall:
 	sh shell_script/nvidia-container-runtime-script.sh
 
 nvidia_docker_test: 
-	sudo docker run --gpus all nvidia/cuda:10.0-base nvidia-smi
+	sudo docker run --gpus all nvidia/cuda:10.1-base nvidia-smi

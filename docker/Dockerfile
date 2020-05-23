@@ -1,4 +1,4 @@
-from cagojeiger/cuda:10.0-base 
+from cagojeiger/cuda:10.1-base 
 MAINTAINER cagojeiger@naver.com
 
 RUN apt-get update -y
