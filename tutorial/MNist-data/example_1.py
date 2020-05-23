@@ -69,10 +69,10 @@ loss_object = tf.keras.losses.SparseCategoricalCrossentropy()
 optimizer = tf.keras.optimizers.Adam()
 
 train_loss = tf.keras.metrics.Mean(name='train_loss')
-train_accuracy = tf.keras.metrics.SparseCatecoricalAccuracy(name='train_accuracy')
+train_accuracy = tf.keras.metrics.SparseCategoricalAccuracy(name='train_accuracy')
 
 test_loss = tf.keras.metrics.Mean(name='test_loss')
-test_accuracy = tf.keras.metrics.SparseCatecoricalAccuracy(name='test_accuracy')
+test_accuracy = tf.keras.metrics.SparseCategoricalAccuracy(name='test_accuracy')
 
 
 @tf.function
@@ -80,7 +80,7 @@ def train_step(images, labels):
     with tf.GradientTape() as tape:
         predictions = model(images)
         loss = loss_object(labels, predictions)
-    gradients = tape.gradient(loss, model.trainable_cariables)
+    gradients = tape.gradient(loss, model.trainable_variables)
     optimizer.apply_gradients(zip(gradients, model.trainable_variables))
 
     train_loss(loss)
