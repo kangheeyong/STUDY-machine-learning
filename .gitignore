@@ -1,0 +1,7 @@
+*.un~
+*.swp
+*.so
+*.pyc
+*.pickle
+__pycache__
+
