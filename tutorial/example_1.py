@@ -91,8 +91,6 @@ def train_step(images, labels):
 @tf.function
 def test_step(images, labels):
     predictions = model(images)
-    breakpoint()
-    tf.keras.utils.plot_model(model, 'my_first_model.png')
     t_loss = loss_object(labels, predictions)
 
     test_loss(t_loss)
