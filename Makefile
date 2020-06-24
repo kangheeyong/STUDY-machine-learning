@@ -3,7 +3,6 @@ clean:
 	-find -name "*.swp" -exec rm {} \;
 	-find -name "*.pyc" -exec rm {} \;
 
-get_requirements:
-	pip3 freeze > requirements.txt
-
+run_jupyter_notebook:
+	jupyter notebook --no-browser --NotebookApp.token= --ip=0.0.0.0 --port 8090 --allow-root 
 
