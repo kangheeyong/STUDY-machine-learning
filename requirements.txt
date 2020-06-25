@@ -3,5 +3,6 @@ plotly
 jupyter
 nltk
 matplotlib
+sklearn
 
 
