@@ -8,5 +8,6 @@ __pycache__
 .ipynb_checkpoints
 *.png
 *.txt
+*.icluoud
 core
 tutorials/*
